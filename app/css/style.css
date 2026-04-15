@@ -2,6 +2,7 @@
 
 /* 1. Design System & Variables */
 @import "./theme.css";
+@import "./effects.css";
 
 /* 2. Plugins & Third Party */
 @import "tw-animate-css";

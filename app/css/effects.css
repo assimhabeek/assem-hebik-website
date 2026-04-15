@@ -1,0 +1,10 @@
+@layer utilities {
+	.bg-portrait-gradient {
+		background-color: var(--background);
+		background-image: radial-gradient(
+			circle at 50% 50%,
+			#1a1a1a 0%,
+			#010101 70%
+		);
+	}
+}
