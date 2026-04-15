@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const Portrait = () => {
 	return (
-		<div className="w-screen h-screen">
+		<div className="fixed w-screen h-screen">
 			<div className="relative w-full h-full bg-[var(--background)] bg-[radial-gradient(circle_at_50%_50%,#1a1a1a_0%,#010101_70%)] bg-cover bg-center bg-no-repeat bg-fixed">
 				<Image
 					src="/portrait.png"

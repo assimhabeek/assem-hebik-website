@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+/* 1. Design System & Variables */
+@import "./theme.css";
+
+/* 2. Plugins & Third Party */
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@layer base {
+	* {
+		@apply border-border outline-ring/50;
+	}
+	body {
+		@apply bg-background text-foreground;
+	}
+	html {
+		@apply font-sans;
+	}
+}
