@@ -49,11 +49,6 @@
 	--radius-4xl: calc(var(--radius) * 2.6);
 }
 
-body {
-	background-color: var(--background);
-	background-image: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #010101 70%);
-}
-
 .lighting-container {
 	position: relative;
 	display: inline-block;
@@ -140,13 +135,13 @@ body {
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+	* {
+		@apply border-border outline-ring/50;
 	}
-  body {
-    @apply bg-background text-foreground;
+	body {
+		@apply bg-background text-foreground;
 	}
-  html {
-    @apply font-sans;
+	html {
+		@apply font-sans;
 	}
 }
