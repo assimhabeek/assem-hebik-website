@@ -48,7 +48,8 @@ export const metadata: Metadata = {
 		siteName: "Assem Hebik Portfolio",
 		images: [
 			{
-				url: "/og-image.png",
+				// Change this to the absolute URL
+				url: "https://assemhebik.com/og-image.png",
 				width: 1200,
 				height: 630,
 				alt: "Assem Hebik Portfolio Preview",
@@ -62,7 +63,8 @@ export const metadata: Metadata = {
 		title: "Assem Hebik | Portfolio",
 		description: "Full Stack Engineer.",
 		creator: "@assem_hebik",
-		images: ["/og-image.png"],
+		// Use the full absolute URL
+		images: ["https://assemhebik.com/og-image.png"],
 	},
 	robots: {
 		index: true,
