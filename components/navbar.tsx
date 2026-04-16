@@ -11,12 +11,16 @@ import {
 	SheetTrigger,
 } from "@/components/ui/sheet";
 import { useScroll } from "@/hooks/useScroll.hook";
+import { ids } from "@/lib/ids";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-	{ title: "Home", href: "/" },
-	{ title: "Features", href: "/features" },
-	{ title: "Pricing", href: "/pricing" },
+	{ title: "Home", href: `/#${ids.heroSection}` },
+	{ title: "Projects", href: `/#${ids.projectsSection}` },
+	{ title: "Testimonials", href: `/#${ids.upworkSection}` },
+	{ title: "Skills", href: `/#${ids.skillSection}` },
+	{ title: "My Career", href: `/#${ids.experienceSection}` },
+	{ title: "Education", href: `/#${ids.educationSection}` },
 ];
 
 export function Navbar() {
@@ -44,24 +48,28 @@ export function Navbar() {
 				</Link>
 
 				{/* Desktop Nav */}
-				<nav className="hidden md:flex items-center gap-10">
+				<nav className="hidden xl:flex items-center gap-10">
 					{/* Increased gap */}
 					{navItems.map((item) => (
 						<Link
 							key={item.title}
 							href={item.href}
-							className="text-base font-medium text-white/80 transition-colors hover:text-white"
+							className="relative text-base font-medium text-white/70 transition-colors hover:text-white group"
 						>
 							{item.title}
+							<span className="absolute -bottom-1 left-0 w-0 h-px bg-orange-500 transition-all duration-300 group-hover:w-full" />
 						</Link>
 					))}
-					<Button className="bg-white text-black hover:bg-zinc-200 px-6 py-5 text-base">
-						Get Started
-					</Button>
+					<Link
+						className="bg-white text-black rounded-xl hover:bg-zinc-200 px-6 py-2 text-base"
+						href={`/#${ids.contactSection}`}
+					>
+						Connect
+					</Link>
 				</nav>
 
 				{/* Mobile Nav */}
-				<div className="md:hidden">
+				<div className="xl:hidden">
 					<Sheet>
 						<SheetTrigger asChild>
 							<Button
@@ -86,14 +94,18 @@ export function Navbar() {
 									<Link
 										key={item.title}
 										href={item.href}
-										className="text-xl font-semibold hover:text-zinc-400 transition-colors"
+										className="group relative text-xl font-semibold text-white transition-colors hover:text-white/80"
 									>
 										{item.title}
+										<span className="absolute -bottom-1 left-1/2 w-0 h-px bg-orange-500 transition-all duration-300 group-hover:w-full group-hover:left-0" />{" "}
 									</Link>
 								))}
-								<Button className="w-full bg-white text-black mt-4 py-6 text-lg">
-									Get Started
-								</Button>
+								<Link
+									className="w-full bg-white text-black rounded-xl text-center p-2 text-lg"
+									href={`/#${ids.contactSection}`}
+								>
+									Connect
+								</Link>
 							</div>
 						</SheetContent>
 					</Sheet>

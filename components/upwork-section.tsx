@@ -1,52 +1,72 @@
 "use client";
-import { motion, Variants } from "motion/react";
+import { ExternalLink } from "lucide-react";
+import { motion, type Variants } from "motion/react";
+import Link from "next/link";
 import {
 	Card,
 	CardContent,
 	CardFooter,
 	CardHeader,
 } from "@/components/ui/card";
+import { ids } from "@/lib/ids";
+
+export interface Review {
+	client: string;
+	feedback: string;
+	project: string;
+}
+
+export interface Stats {
+	label: string;
+	value: string;
+	color: string;
+}
+
+const stats: Stats[] = [
+	{
+		label: "Max Retention",
+		value: "5-Year Contracts", // Pointing out long-term stability
+		color: "text-emerald-400",
+	},
+	{
+		label: "Consistent Success",
+		value: "7-Jobs Completed", // Pointing out long-term stability
+		color: "text-red-400",
+	},
+	{
+		label: "Billed Expertise",
+		value: "2,000+ Hours",
+		color: "text-blue-400",
+	},
+	{
+		label: "Platform Top Talent",
+		value: "Top Rated Plus",
+		color: "text-orange-500",
+	},
+];
+
+const reviews: Review[] = [
+	{
+		client: "Azzam | Founder & CEO of Carifex",
+		feedback:
+			"Where can I start with Assem.\n\nExceptional engineer. Took what was a complex build for a fulfillment solution originally on an excel document and converted into a software that now seamlessly works with the backend of our ecommerce store to fulfillment centre.\n\nHe is remarkable in every sense. Made countless corrections and revisions to ensure that it worked exactly like we needed it.\n\nNever did he say it couldn't be done, unless it didn't make sense from a coding perspective. And suggestions were made and implemented with his own initiative.\n\nTruly a great find.",
+		project: "Carifex Fulfillment",
+	},
+	{
+		client: "John Steele | CEO of Series Code",
+		feedback:
+			"Assem is one of the best engineers I've worked with. We've had the good fortune to work with him for the past year. While our paths are separating now, Assem is welcome back any time.",
+		project: "Portal Manager",
+	},
+	{
+		client: "Webber Wang | CEO of Codelab",
+		feedback:
+			"It’s been a pleasure working together, great code quality as always!",
+		project: "Codelab.app",
+	},
+];
 
 export const UpworkSection = () => {
-	const stats = [
-		{
-			label: "Max Retention",
-			value: "5-Year Contracts", // Pointing out long-term stability
-			color: "text-emerald-400",
-		},
-		{
-			label: "Billed Expertise",
-			value: "2,000+ Hours",
-			color: "text-blue-400",
-		},
-		{
-			label: "Platform Milestone",
-			value: "Top Rated Plus",
-			color: "text-orange-500",
-		},
-	];
-
-	const reviews = [
-		{
-			client: "Azzam | Founder & CEO of Carifex",
-			feedback:
-				"Where can I start with Assem.\n\nExceptional engineer. Took what was a complex build for a fulfillment solution originally on an excel document and converted into a software that now seamlessly works with the backend of our ecommerce store to fulfillment centre.\n\nHe is remarkable in every sense. Made countless corrections and revisions to ensure that it worked exactly like we needed it.\n\nNever did he say it couldn't be done, unless it didn't make sense from a coding perspective. And suggestions were made and implemented with his own initiative.\n\nTruly a great find.",
-			project: "Carifex Fulfillment",
-		},
-		{
-			client: "John Steele | CEO of Series Code",
-			feedback:
-				"Assem is one of the best engineers I've worked with. We've had the good fortune to work with him for the past year. While our paths are separating now, Assem is welcome back any time.",
-			project: "Portal Manager",
-		},
-		{
-			client: "Webber Wang | CEO of Codelab",
-			feedback:
-				"It’s been a pleasure working together, great code quality as always!",
-			project: "Codelab.app",
-		},
-	];
-
 	const containerVariants: Variants = {
 		hidden: { opacity: 0 },
 		visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
@@ -62,7 +82,7 @@ export const UpworkSection = () => {
 	};
 
 	return (
-		<section className="py-24 relative">
+		<section id={ids.upworkSection} className="py-24 relative">
 			<div className="max-w-6xl mx-auto px-6">
 				{/* Header Section */}
 				<div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-white/5 pb-12">
@@ -81,8 +101,8 @@ export const UpworkSection = () => {
 					</div>
 
 					<div className="flex gap-8 md:pl-8">
-						{stats.map((stat, i) => (
-							<div key={i}>
+						{stats.map((stat) => (
+							<div key={stat.label}>
 								<div className={`text-xl font-mono ${stat.color}`}>
 									{stat.value}
 								</div>
@@ -120,33 +140,31 @@ export const UpworkSection = () => {
 
 				{/* Call to Action */}
 				<div className="mt-12 flex justify-center">
-					<a
-						href="https://www.upwork.com/freelancers/~019623e1987ba42f36"
+					<Link
+						href="https://www.upwork.com/freelancers/~015a96d156da00826b"
 						target="_blank"
 						rel="noopener noreferrer"
-						className="px-6 py-2 rounded-full border border-orange-500/20 bg-orange-500/5 text-orange-400 text-sm uppercase tracking-[0.2em] hover:bg-orange-500/10 transition-all"
+						className="flex flex-row p-6 rounded-full border border-orange-500/20 bg-white/5 text-white text-sm uppercase tracking-[0.2em] hover:bg-white/10 transition-all"
 					>
-						View Full History
-					</a>
+						View Profile <ExternalLink className="ml-2" />
+					</Link>
 				</div>
 			</div>
 		</section>
 	);
 };
 
-const ReviewCard = ({
-	review,
-	isFeatured,
-}: {
-	review: any;
+interface ReviewCardProps {
+	review: Review;
 	isFeatured: boolean;
-}) => (
-	<Card className="h-full flex flex-col border-white/5 bg-white/[0.02] backdrop-blur-md rounded-3xl overflow-hidden group hover:bg-white/[0.04] transition-all duration-500">
+}
+const ReviewCard = ({ review, isFeatured }: ReviewCardProps) => (
+	<Card className="h-full flex flex-col border-white/5 bg-white/[0.02] backdrop-blur-md rounded-3xl overflow-hidden group hover:bg-white/[0.04] transition-all duration-500 cursor-pointer">
 		<CardHeader className="pb-4 flex flex-row items-center justify-between">
 			<div className="flex items-center gap-1">
-				{[...Array(5)].map((_, i) => (
+				{Array.from({ length: 5 }, (_, i) => i + 1).map((_) => (
 					<svg
-						key={i}
+						key={_}
 						className="w-3.5 h-3.5 text-orange-500 fill-current"
 						viewBox="0 0 20 20"
 						aria-hidden="true"

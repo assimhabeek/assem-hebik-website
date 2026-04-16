@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "motion/react";
+import { ids } from "@/lib/ids";
 
 const categories = [
 	{
@@ -92,7 +93,10 @@ export const SkillSection = () => {
 	};
 
 	return (
-		<section className="container min-h-screen mx-auto py-24 px-6 flex flex-col justify-center">
+		<section
+			id={ids.skillSection}
+			className="container min-h-screen mx-auto py-24 px-6 flex flex-col justify-center"
+		>
 			<div className="max-w-6xl mx-auto w-full">
 				{/* Header Animation */}
 				<motion.div

@@ -114,7 +114,7 @@ export function ProjectsSection() {
 						className={cn("h-full", project.className)}
 					>
 						{/* 3. Added 'flex flex-col' to the Card to allow internal spacing control */}
-						<Card className="group w-full h-full bg-card/20 backdrop-blur-md border border-white/5 p-0 flex flex-col overflow-hidden">
+						<Card className="group w-full h-full bg-card/20 backdrop-blur-md border border-white/5 p-0 flex flex-col overflow-hidden pointer-events cursor-pointer">
 							{project.image && (
 								/* 4. Responsive Image height: taller on mobile, fixed on desktop */
 								<div className="relative w-full overflow-hidden h-[250px] md:h-[300px] lg:h-[350px]">

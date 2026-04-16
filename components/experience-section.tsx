@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import { ids } from "@/lib/ids";
 
 const experiences = [
 	{
@@ -28,7 +29,10 @@ const experiences = [
 
 export const ExperienceSection = () => {
 	return (
-		<section className="container mx-auto py-32 px-6">
+		<section
+			id={ids.experienceSection}
+			className="container mx-auto py-32 px-6"
+		>
 			<div className="max-w-4xl mx-auto">
 				<h2 className="text-5xl font-bold text-white mb-16 tracking-tighter">
 					Professional Journey
@@ -46,7 +50,7 @@ export const ExperienceSection = () => {
 						>
 							{/* The Timeline Node */}
 							<div className="absolute -left-[51px] top-1 w-5 h-5 rounded-full bg-black border-2 border-white/20 group-hover:border-white/50 transition-colors" />
-							<div className="absolute -left-[47px] top-[5px] w-3 h-3 rounded-full bg-blue-500/50 animate-pulse" />
+							<div className="absolute -left-[47px] top-[5px] w-3 h-3 rounded-full bg-orange-500/50 animate-pulse" />
 
 							<span className="text-sm font-medium text-white/30 uppercase tracking-[0.2em] mb-2 block">
 								{exp.period}

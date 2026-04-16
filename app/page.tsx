@@ -1,3 +1,4 @@
+import { ContactSection } from "@/components/contact-section";
 import { AcademicFoundation } from "@/components/education-section";
 import { ExperienceSection } from "@/components/experience-section";
 import { HeroSection } from "@/components/hero-section";
@@ -18,6 +19,7 @@ const Page = () => {
 			<SkillSection />
 			<ExperienceSection />
 			<AcademicFoundation />
+			<ContactSection />
 		</>
 	);
 };
