@@ -2,6 +2,7 @@
 
 import { type HTMLMotionProps, motion } from "motion/react";
 import Image from "next/image";
+import { ids } from "@/lib/ids";
 
 const slideUp: HTMLMotionProps<"div"> = {
 	initial: { y: 40, opacity: 0 },
@@ -23,9 +24,12 @@ const slideLeft: HTMLMotionProps<"div"> = {
 	},
 };
 
-export const TitleSection = () => {
+export const HeroSection = () => {
 	return (
-		<section className="container relative h-screen mx-auto overflow-hidden">
+		<section
+			id={ids.heroSection}
+			className="container relative h-screen mx-auto overflow-hidden"
+		>
 			<motion.div
 				className="absolute w-full bottom-0 pl-2 pr-1 pb-24"
 				{...slideUp}
@@ -40,7 +44,7 @@ export const TitleSection = () => {
 					alt="Assem Hebik"
 					width={0}
 					height={0}
-					loading="lazy"
+					loading="eager"
 					sizes="100vw"
 					style={{ width: "100%", height: "auto" }}
 				/>

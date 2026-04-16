@@ -3,7 +3,6 @@
 import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
 	Sheet,
@@ -11,6 +10,7 @@ import {
 	SheetTitle,
 	SheetTrigger,
 } from "@/components/ui/sheet";
+import { useScroll } from "@/hooks/useScroll.hook";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -20,15 +20,7 @@ const navItems = [
 ];
 
 export function Navbar() {
-	const [isScrolled, setIsScrolled] = useState(false);
-
-	useEffect(() => {
-		const handleScroll = () => {
-			setIsScrolled(window.scrollY > 20);
-		};
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, []);
+	const isScrolled = useScroll();
 
 	return (
 		<header
