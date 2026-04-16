@@ -90,6 +90,7 @@ export const AcademicFoundation = () => {
 
 									<Link
 										href="https://www.univ-constantine2.dz/"
+										target="_blank"
 										rel="noopener noreferrer"
 										className="text-gray-400 hover:text-white transition-colors text-lg inline-flex items-center gap-2"
 									>

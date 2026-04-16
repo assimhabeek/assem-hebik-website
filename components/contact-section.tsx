@@ -166,6 +166,8 @@ export const ContactSection = () => {
 							>
 								<Link
 									href={social.href}
+									target="_blank"
+									rel="noopener noreferrer"
 									className={cn(
 										"w-full h-full border border-white/10 p-8 rounded-lg flex flex-col items-center",
 										social.className,
@@ -189,6 +191,8 @@ export const ContactSection = () => {
 						{direct.map((item) => (
 							<Link
 								key={item.name}
+								target="_blank"
+								rel="noopener noreferrer"
 								href={item.href}
 								className="flex items-center justify-between p-5 rounded-2xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.05] transition-all group h-full"
 							>

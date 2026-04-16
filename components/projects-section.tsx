@@ -160,6 +160,8 @@ export function ProjectsSection() {
 							<CardFooter className="p-4  flex bg-card/20 gap-3">
 								<Link
 									href={project.link}
+									target="_blank"
+									rel="noopener noreferrer"
 									className="flex-1 justify-center flex items-center gap-2 px-4 py-2 bg-white text-black  font-bold uppercase rounded-full hover:bg-neutral-200 transition-colors"
 								>
 									Visit <ExternalLink size={12} />
@@ -167,6 +169,8 @@ export function ProjectsSection() {
 								{project.github && (
 									<Link
 										href={project.github}
+										target="_blank"
+										rel="noopener noreferrer"
 										className="flex-1 justify-center flex items-center gap-2 px-4 py-2 bg-black/95 border border-white/10 text-white  font-bold uppercase rounded-full hover:bg-white/10 transition-all"
 									>
 										Source <ExternalLink size={12} />
