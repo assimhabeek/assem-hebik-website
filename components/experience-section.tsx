@@ -34,7 +34,7 @@ export const ExperienceSection = () => {
 			className="container mx-auto py-32 px-6"
 		>
 			<div className="max-w-4xl mx-auto">
-				<h2 className="text-5xl font-bold text-white mb-16 tracking-tighter">
+				<h2 className="text-2xl md:text-5xl font-bold text-white mb-16 tracking-tighter">
 					Professional Journey
 				</h2>
 

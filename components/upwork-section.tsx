@@ -100,7 +100,7 @@ export const UpworkSection = () => {
 						</p>
 					</div>
 
-					<div className="flex gap-8 md:pl-8">
+					<div className="flex flex-row  w-full flex-wrap gap-8 md:pl-8">
 						{stats.map((stat) => (
 							<div key={stat.label}>
 								<div className={`text-xl font-mono ${stat.color}`}>

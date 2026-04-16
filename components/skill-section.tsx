@@ -106,7 +106,7 @@ export const SkillSection = () => {
 					transition={{ duration: 0.8 }}
 					className="text-center mb-16"
 				>
-					<h1 className="text-6xl font-bold text-white mb-4 tracking-tighter">
+					<h1 className="text-2xl md:text-5xl font-bold text-white mb-4 tracking-tighter">
 						Technical Skills
 					</h1>
 					<p className="text-white/80 mb-12 text-lg max-w-2xl mx-auto">
