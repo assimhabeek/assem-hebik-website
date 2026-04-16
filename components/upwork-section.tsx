@@ -38,11 +38,6 @@ const stats: Stats[] = [
 		value: "2,000+ Hours",
 		color: "text-blue-400",
 	},
-	{
-		label: "Platform Top Talent",
-		value: "Top Rated Plus",
-		color: "text-orange-500",
-	},
 ];
 
 const reviews: Review[] = [
@@ -85,7 +80,7 @@ export const UpworkSection = () => {
 		<section id={ids.upworkSection} className="py-24 relative">
 			<div className="max-w-6xl mx-auto px-6">
 				{/* Header Section */}
-				<div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-white/5 pb-12">
+				<div className="mb-16 flex flex-col md:flex-row md:items-start justify-between gap-8 border-b border-white/5 pb-12">
 					<div className="space-y-4">
 						<h2 className="text-5xl font-extralight tracking-tighter text-white">
 							Client{" "}
@@ -100,7 +95,7 @@ export const UpworkSection = () => {
 						</p>
 					</div>
 
-					<div className="flex flex-row  w-full flex-wrap gap-8 md:pl-8">
+					<div className="flex flex-row  h-full w-full flex-wrap gap-8 md:pl-8">
 						{stats.map((stat) => (
 							<div key={stat.label}>
 								<div className={`text-xl font-mono ${stat.color}`}>
