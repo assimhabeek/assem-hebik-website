@@ -79,7 +79,7 @@ const direct = [
 	{
 		name: "Email",
 		value: "assimhabe@egmail.com",
-		href: "mailto:assimhabe@egmail.com",
+		href: "mailto:assimhabe@gmail.com",
 		icon: <Mail className="w-4 h-4" />,
 	},
 	{
