@@ -78,7 +78,7 @@ const UpworkIcon = ({ size = 128, title = "Upwork Profile", ...props }) => {
 const direct = [
 	{
 		name: "Email",
-		value: "assimhabe@egmail.com",
+		value: "assimhabe@gmail.com",
 		href: "mailto:assimhabe@gmail.com",
 		icon: <Mail className="w-4 h-4" />,
 	},
